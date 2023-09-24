@@ -1,0 +1,13 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Top Selling Game Genres",
+    "data": {
+      "url":"https://raw.githubusercontent.com/lincoln-briscoe/FIT3179-dataVis/main/data%20csv_s/genre_data.csv"
+    },
+    "mark": "arc",
+    "encoding": {
+      "theta": {"field": "Total Sales", "type": "quantitative"},
+      "color": {"field": "Genre", "type": "nominal"}
+    }
+  }
+  

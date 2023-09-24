@@ -14,11 +14,29 @@
 <body>
   
 <div id="choropleth_map"></div>
+<div id="bar_chart"></div>
+<div id="pie_chart"></div>
+<div id="line_chart"></div>
 
 <script type="text/javascript">
 
   var spec2 = "js/choropleth_map.json";
   vegaEmbed('#choropleth_map', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var spec2 = "js/bar_chart.json";
+  vegaEmbed('#bar_chart', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var spec2 = "js/pie_chart.json";
+  vegaEmbed('#pie_chart', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var spec2 = "js/line_chart.json";
+  vegaEmbed('#line_chart', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>

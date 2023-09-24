@@ -4,10 +4,29 @@
     "data": {
     "url": "https://raw.githubusercontent.com/lincoln-briscoe/FIT3179-dataVis/main/data%20csv_s/sales_data_limited.csv"
     },
-    "mark": {"type": "bar", "tooltip": true},
+    "transform": [
+    {
+      "fold": ["NA Sales", "EU Sales", "JP Sales", "Other Sales"],
+      "as": [
+        "Area Sales",
+        "Sales (millions)"
+      ]
+    }
+  ],
+    "mark": {"type": "bar"},
     "encoding": {
-    "y": { "field": "Total Sales", "type": "quantitative", "title": "Total Sales (millions)"},
-    "x": { "field": "Game Name", "type": "nominal", "axis": ""},
-    "color": {"field": "Game Name", "type": "nominal"}
-    }
-    }
+    "x": { "field": "Game Name", "type": "nominal"},
+    "y": {
+      "field": "Sales (millions)",
+      "type": "quantitative"
+    },
+    "color": {
+      "type": "nominal",
+      "field": "Area Sales"
+    },
+    "tooltip": [
+      {"field": "Total Sales", "type": "quantitative", "title": "Total Sales (millions)"},
+      {"field": "Game Name", "type": "nominal"}
+    ]
+  }
+}

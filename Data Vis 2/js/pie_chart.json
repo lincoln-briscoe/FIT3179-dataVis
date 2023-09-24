@@ -4,9 +4,9 @@
     "data": {
       "url":"https://raw.githubusercontent.com/lincoln-briscoe/FIT3179-dataVis/main/data%20csv_s/genre_data.csv"
     },
-    "mark": "arc",
+    "mark": {"type": "arc", "tooltip": true},
     "encoding": {
-      "theta": {"field": "Total Sales", "type": "quantitative"},
+      "theta": {"field": "Total Sales", "type": "quantitative", "title": "Total Sales (millions)"},
       "color": {"field": "Genre", "type": "nominal"}
     }
   }

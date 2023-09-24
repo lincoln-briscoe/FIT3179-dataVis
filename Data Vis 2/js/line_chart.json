@@ -1,13 +1,32 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 600,
-  "height": 200,
-    "description": "Google's stock price over time.",
+    "title": "Nintendo sales Figures",
+    "width": 800,
+    "height": 200,
     "data": {"url": "https://raw.githubusercontent.com/lincoln-briscoe/FIT3179-dataVis/main/data%20csv_s/nintendo_data.csv"},
-    "mark": "line",
     "encoding": {
       "x": {"field": "Year", "type": "quantitative"},
-      "y": {"field": "Total Sales", "type": "quantitative"}
-    }
+      "y": {"field": "Total Sales", "type": "quantitative"},
+      "color": {"value": "red"}
+    },
+    "layer": [{
+      "mark": "line"
+    }, {
+      "params": [{
+        "name": "hover",
+        "select": {"type": "point", "on": "mouseover", "clear": "mouseout"}
+      }],
+      "mark": {"type": "circle", "tooltip": true},
+      "encoding": {
+        "opacity": {
+          "condition": {"test": {"param": "hover", "empty": false}, "value": 1},
+          "value": 0
+        },
+        "size": {
+          "condition": {"test": {"param": "hover", "empty": false}, "value": 48},
+          "value": 100
+        }
+      }
+    }]
   }
   

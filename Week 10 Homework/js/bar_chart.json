@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text": "Highest Video Game Sales" },
+  "width": 800,
+  "height": 200,
+  "data": {
+  "url": "https://raw.githubusercontent.com/lincoln-briscoe/FIT3179-dataVis/main/data%20csv_s/sales_data_limited.csv"
+  },
+  "transform": [
+  {
+    "fold": ["Total Sales", "NA Sales", "EU Sales", "JP Sales", "Other Sales"],
+    "as": [
+      "Area Sales",
+      "Sales (millions)"
+    ]
+  },
+  {"filter": "Region_selection == null || datum['Area Sales'] == Region_selection"}
+],
+"encoding": {
+  "y": { "field": "Game Name", "type": "nominal"},
+  "x": {
+    "field": "Sales (millions)",
+    "type": "quantitative"
+  },
+  "tooltip": [
+    {"field": "Sales (millions)", "type": "quantitative", "title": "Sales (millions)"},
+    {"field": "Game Name", "type": "nominal"}
+  ]
+},
+"layer": [ {
+  "mark": {"type": "bar"}
+  },
+  {
+  "mark": {"type": "text",
+  "align": "left",
+  "baseline": "middle",
+  "dx": 3},
+  "encoding": {
+      "text": {"field": "Sales (millions)", "type": "quantitative"}
+      }
+  }
+],
+"params": [
+{
+    "name": "Region_selection",
+    "bind": {
+    "input": "select",
+    "options": [
+      "Total Sales",
+      "NA Sales",
+      "EU Sales",
+      "JP Sales",
+      "Other Sales"
+    ],
+    "labels":[
+      "Total Sales",
+      "North America",
+      "Europe",
+      "Japan",
+      "Other"
+    ],
+    "name": "Region Selection: "
+    }
+  }
+]
+}

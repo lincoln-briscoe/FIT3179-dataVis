@@ -6,7 +6,7 @@
     "data": {"url": "https://raw.githubusercontent.com/lincoln-briscoe/FIT3179-dataVis/main/data%20csv_s/nintendo_data.csv"},
     "encoding": {
       "x": {"field": "Year", "type": "quantitative"},
-      "y": {"field": "Total Sales", "type": "quantitative"},
+      "y": {"field": "Total Sales", "type": "quantitative", "title": "Total Sales (Millions)"},
       "color": {"value": "red"}
     },
     "layer": [{

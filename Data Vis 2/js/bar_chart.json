@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": { "text": "Highest Video Game Sales" },
+    "title": { "text": "Figrue 1.2 Highest Video Game Sales" },
     "data": {
     "url": "https://raw.githubusercontent.com/lincoln-briscoe/FIT3179-dataVis/main/data%20csv_s/sales_data_limited.csv"
     },

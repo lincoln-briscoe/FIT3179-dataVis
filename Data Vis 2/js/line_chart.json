@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Nintendo sales Figures",
+    "title": "Figure 1.3 Nintendo sales Figures",
     "width": 800,
     "height": 200,
     "data": {"url": "https://raw.githubusercontent.com/lincoln-briscoe/FIT3179-dataVis/main/data%20csv_s/nintendo_data.csv"},

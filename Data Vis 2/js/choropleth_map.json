@@ -1,9 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Video Game Company Employees Per Country",
+  "title": "Figure 1.1 Video Game Company Employees Per Country",
   "width": 800,
   "height": 400,
   "projection": {"type": "equalEarth"},
+  "background": "aliceblue",
   "data": {
     "url": "https://raw.githubusercontent.com/lincoln-briscoe/FIT3179-dataVis/main/Week%209%20Homework/js/ne_110m_admin_0_countries.topojson",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
@@ -26,7 +27,8 @@
     "color": {
       "field": "Employee Count",
       "type": "quantitative",
-      "scale": {"domain": [0, 100, 500, 1000, 5000, 10000, 50000, 100000], "scheme": "reds"}
+      "scale": {"type": "linear", "domain": [0, 330, 479, 661, 872, 1007, 1766, 1953, 
+      3800, 7000, 7400, 7740, 20849, 33800, 148965, 163902, 230061], "scheme": "reds"}
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
